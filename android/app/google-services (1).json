@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1073592969167",
+    "project_id": "twocents-da342",
+    "storage_bucket": "twocents-da342.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073592969167:android:90eb81134797ba78f114ba",
+        "android_client_info": {
+          "package_name": "com.twocents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073592969167-dlpd88rnvkmusdjpfvbpgcrls289n5oo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBflcrhT2B5OON77rlUbSlYlEunb1hWsXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073592969167-dlpd88rnvkmusdjpfvbpgcrls289n5oo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

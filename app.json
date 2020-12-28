@@ -1,0 +1,12 @@
+{
+  "name": "2cents",
+  "displayName": "2cents",
+  "expo": {
+    "name": "2cents",
+    "slug": "2cents",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
