@@ -1,4 +1,4 @@
-package com.2cents;
+package com.twocents;
 
 import android.os.Bundle;
 

@@ -1,4 +1,4 @@
-package com.2cents.generated;
+package com.twocents.generated;
 
 import java.util.Arrays;
 import java.util.List;
