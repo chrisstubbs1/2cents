@@ -13,14 +13,20 @@ const Login = ({ navigation }) => {
 
       <TextInput style={styles.textInput} placeholder={"Password"} />
 
-      <Text style={styles.forgotPassword}>Forgot password?</Text>
+      <Text style={styles.forgotPassword}>Forgot pashsword?</Text>
 
       <View style={styles.buttonContainer}>
-        <TouchableHighlight style={styles.button} onPress={() => navigation.navigate("Home")}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => navigation.navigate("Home")}
+        >
           <Button title={"Login"} />
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.button} onPress={()=> Alert.alert("Sdign up")}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => Alert.alert("Sdign up")}
+        >
           <Button title={"Sign up"} />
         </TouchableHighlight>
       </View>
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#cae4db",
     margin: 20,
     borderRadius: 20,
-    width: 150,
+    width: 100,
   },
 
   buttonContainer: {

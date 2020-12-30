@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, Button, Alert, Platform, TouchableHighlight } from "react-native";
 
 
-const Home = ({navigation}) => {
+const Home = () => {
     return (
       <View>
-        <TouchableHighlight onPress={navigation.navigate("Login")}>
+        <TouchableHighlight>
           <Text>Hello world</Text>
         </TouchableHighlight>
       </View>

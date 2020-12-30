@@ -1,24 +1,10 @@
-require_relative '../node_modules/react-native/scripts/react_native_pods'
-require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-
-platform :ios, '10.0'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
 target '2cents' do
-  use_unimodules!
-  config = use_native_modules!
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
 
-  use_react_native!(:path => config["reactNativePath"])
+  # Pods for 2cents
 
-  # Comment this code below to disable Flipper.
-  #
-  # You should not install Flipper in CI environments when creating release
-  # builds, this will lead to significantly slower build times.
-  #
-  # Note that if you have use_frameworks! enabled, Flipper will not work.
-  #
-   use_flipper!
-   post_install do |installer|
-     flipper_post_install(installer)
-   end
 end
