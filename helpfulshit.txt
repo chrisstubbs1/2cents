@@ -1,0 +1,8 @@
+fix firebase pods sdk
+
+######COMMON SCRIPTS######################
+expo start
+npm start
+npm install
+npx react-native run-android
+npx react-native run-ios
