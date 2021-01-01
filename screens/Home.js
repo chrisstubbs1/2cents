@@ -37,7 +37,22 @@ const Home = () => {
         </TouchableHighlight>
       </View>
 
-      <View style={styles.rightHalf}></View>
+      <View style={styles.rightHalf}>
+        <View style={styles.imageContainer}>
+          <Image
+              source={{ uri: "https://reactjs.org/logo-og.png" }}
+              style={{ width: "100%", height: 100 }}
+          />
+        </View>
+
+        <View style={styles.imageContainer}>
+          <Image
+              source={{ uri: "https://reactjs.org/logo-og.png" }}
+              style={{ width: "100%", height: 200 }}
+          />
+          <Text style={styles.imageText}>React</Text>
+        </View>
+      </View>
     </View>
   );
 };
