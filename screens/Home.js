@@ -6,52 +6,21 @@ import {
   Text,
   View,
   Button,
-  Alert,
-  Platform,
   TouchableHighlight,
   Image,
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
+import {ImageBackground} from "react-native-web";
 
 const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.leftHalf}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: 100 }}
-          />
-        </View>
 
-        <View style={styles.imageContainer}>
-          <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: 200 }}
-          />
-          <Text style={styles.imageText}>React</Text>
-        </View>
-
-        <TouchableHighlight style={styles.swipeButton}>
-          <Button title={"Swipe!"} />
-        </TouchableHighlight>
       </View>
 
       <View style={styles.rightHalf}>
-        <View style={styles.imageContainer}>
-          <Image
-              source={{ uri: "https://reactjs.org/logo-og.png" }}
-              style={{ width: "100%", height: 100 }}
-          />
-        </View>
 
-        <View style={styles.imageContainer}>
-          <Image
-              source={{ uri: "https://reactjs.org/logo-og.png" }}
-              style={{ width: "100%", height: 200 }}
-          />
-          <Text style={styles.imageText}>React</Text>
-        </View>
       </View>
     </View>
   );
