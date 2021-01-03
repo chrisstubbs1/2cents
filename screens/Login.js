@@ -31,7 +31,7 @@ const Login = ({navigation}) => {
                 </View>
 
                 <View style={styles.thirdContainer}>
-                    <Button mode={'contained'} contentStyle={styles.loginBtn}>
+                    <Button mode={'contained'} contentStyle={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
                         Log In
                     </Button>
 
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
+        padding: 10,
     },
 
     backgroundImg: {
