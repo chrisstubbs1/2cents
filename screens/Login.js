@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
                         style={styles.infoInput}
                     />
 
-                    <Button color={'#7a57d1'} style={styles.forgotPassword}>
+                    <Button color={'#7a57d1'} style={styles.forgotPassword} onPress={() => navigation.navigate('ForgotPassword')}>
                         Forgot Password?
                     </Button>
                 </View>
