@@ -1,44 +1,44 @@
 import "react-native-gesture-handler";
 import LogoHeader from "./components/LogoHeader";
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
-import {Button} from 'react-native-paper';
-import {TextInput} from 'react-native-paper';
+import {StyleSheet, View} from "react-native";
+import {TextInput, Button} from 'react-native-paper';
 
 const Login = ({navigation}) => {
     return (
         <View style={styles.container}>
 
-                <LogoHeader/>
+            <LogoHeader/>
 
-                <View style={styles.secondContainer}>
-                    <TextInput
-                        multiLine={false}
-                        label="Email"
-                        style={styles.infoInput}
-                        selectionColor={'#A41846'}
-                    />
+            <View style={styles.secondContainer}>
+                <TextInput
+                    multiLine={false}
+                    label="Email"
+                    style={styles.infoInput}
+                    selectionColor={'#A41846'}
+                />
 
-                    <TextInput
-                        multiLine={false}
-                        label="Password"
-                        style={styles.infoInput}
-                    />
+                <TextInput
+                    multiLine={false}
+                    label="Password"
+                    style={styles.infoInput}
+                />
 
-                    <Button color={'#7a57d1'} style={styles.forgotPassword} onPress={() => navigation.navigate('ForgotPassword')}>
-                        Forgot Password?
-                    </Button>
-                </View>
+                <Button color={'#7a57d1'} style={styles.forgotPassword}
+                        onPress={() => navigation.navigate('Forgot Password')}>
+                    Forgot Password?
+                </Button>
+            </View>
 
-                <View style={styles.thirdContainer}>
-                    <Button mode={'contained'} contentStyle={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
-                        Log In
-                    </Button>
+            <View style={styles.thirdContainer}>
+                <Button mode={'contained'} contentStyle={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
+                    Log In
+                </Button>
 
-                    <Button color={"#7a57d1"} onPress={() => navigation.navigate('Signup')}>
-                        Don't have an account? Sign up here.
-                    </Button>
-                </View>
+                <Button color={"#7a57d1"} onPress={() => navigation.navigate('Signup')}>
+                    Don't have an account? Sign up here.
+                </Button>
+            </View>
 
         </View>
     );
@@ -90,8 +90,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#7a57d1'
     },
 
-    forgotPassword: {
-    },
+    forgotPassword: {},
 
     buttonContainer: {
         display: "flex",
