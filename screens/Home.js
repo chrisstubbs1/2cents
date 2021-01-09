@@ -7,7 +7,6 @@ import {
 import HomeRightHalf from "./components/HomeRightHalf";
 import HomeLeftHalf from "./components/HomeLeftHalf";
 
-
 const Home = () => {
 
     return (

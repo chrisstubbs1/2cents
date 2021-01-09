@@ -12,22 +12,7 @@ const HomeLeftHalf = () => {
     return (
         <View style={styles.leftHalf}>
             <View style={styles.drawerSection}>
-                <Menu
-                    visible={visible}
-                    onDismiss={closeMenu}
-                    anchor={<Button onPress={openMenu}>User Menu</Button>}>
-                    <Menu.Item onPress={() => {
-                    }} title="Your Profile"
-                    />
-                    <Menu.Item onPress={() => {
-                    }} title="Announcement Board"/>
-                    <Menu.Item onPress={() => {
-                    }} title="Statistics"/>
-                    <Divider/>
-                    <Menu.Item onPress={() => {
-                    }} title="Sign Out"
-                               titleStyle={{color: "red"}}/>
-                </Menu>
+               
             </View>
 
             <View style={styles.contentSection}>
