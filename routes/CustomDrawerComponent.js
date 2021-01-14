@@ -6,7 +6,6 @@ import {
 } from '@react-navigation/drawer';
 import {Avatar} from 'react-native-paper'
 
-
 const CustomDrawerComponent = (props) => (
     <DrawerContentScrollView {...props} >
         <DrawerItemList {...props} style={styles.dil}/>

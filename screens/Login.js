@@ -1,45 +1,41 @@
 import "react-native-gesture-handler";
 import LogoHeader from "./components/LogoHeader";
-import React from "react";
-import {StyleSheet, View} from "react-native";
-import {TextInput, Button} from 'react-native-paper';
+import LoginFormContainer from "./components/LoginFormContainer";
+import LoginButtonSection from "./components/LoginButtonSection";
+import React, {useState, useEffect} from "react";
+import {StyleSheet, View, Alert} from "react-native";
+// import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
+
+    const [userName, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [user, setUser] = useState()
+    const [initializing, setInitializing] = useState(true)
+
+    useEffect(() => {
+        if (userName !== '') {
+            Alert.alert(userName)
+        }
+    }, [userName])
+
+    const usernameStateCallback = (currentUsername) => {
+        setUsername(currentUsername)
+    }
+
     return (
         <View style={styles.container}>
-
-            <LogoHeader/>
-
-            <View style={styles.secondContainer}>
-                <TextInput
-                    multiLine={false}
-                    label="Email"
-                    style={styles.infoInput}
-                    selectionColor={'#A41846'}
-                />
-
-                <TextInput
-                    multiLine={false}
-                    label="Password"
-                    style={styles.infoInput}
-                />
-
-                <Button color={'#7a57d1'} style={styles.forgotPassword}
-                        onPress={() => navigation.navigate('Forgot Password')}>
-                    Forgot Password?
-                </Button>
+            <View style={styles.logoHeader}>
+                <LogoHeader/>
             </View>
-
-            <View style={styles.thirdContainer}>
-                <Button mode={'contained'} contentStyle={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
-                    Log In
-                </Button>
-
-                <Button color={"#7a57d1"} onPress={() => navigation.navigate('Signup')}>
-                    Don't have an account? Sign up here.
-                </Button>
+            <View style={styles.formSection}>
+                <LoginFormContainer nav={navigation}
+                                    dataPasser={usernameStateCallback}/>
             </View>
-
+            <View style={styles.buttonSection}>
+                <LoginButtonSection nav={navigation}/>
+            </View>
         </View>
     );
 };
@@ -54,47 +50,18 @@ const styles = StyleSheet.create({
         padding: 10,
     },
 
-    backgroundImg: {
-        flex: 1,
-        width: "100%"
+    logoHeader: {
+        flex: 1
     },
 
-    secondContainer: {
+    formSection: {
         flex: 2,
-        width: "100%",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
-    infoInput: {
-        width: 300,
-        height: 50,
-    },
-
-    thirdContainer: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: 'flex-start',
-    },
-
-    text: {
-        fontSize: 70,
-        color: "#fff",
-    },
-
-    loginBtn: {
-        height: 50,
-        width: '100%',
-        fontSize: 20,
-        backgroundColor: '#7a57d1'
-    },
-
-    forgotPassword: {},
-
-    buttonContainer: {
-        display: "flex",
-        flexDirection: "column",
+    buttonSection: {
+        flex: 1
     },
 });
 
