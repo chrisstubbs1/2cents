@@ -1,27 +1,27 @@
 import "react-native-gesture-handler";
-import LogoHeader from "./components/LogoHeader";
-import LoginFormContainer from "./components/LoginFormContainer";
-import LoginButtonSection from "./components/LoginButtonSection";
+import LogoHeader from "./LoginComponents/LogoHeader";
+import LoginFormContainer from "./LoginComponents/LoginFormContainer";
+import LoginButtonSection from "./LoginComponents/LoginButtonSection";
 import React, {useState, useEffect} from "react";
 import {StyleSheet, View, Alert} from "react-native";
 // import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
 
-    const [userName, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-
+    const [userCredentialState, setUserCredentialState] = useState({
+        email: '',
+        password: ''
+    })
     const [user, setUser] = useState()
     const [initializing, setInitializing] = useState(true)
 
     useEffect(() => {
-        if (userName !== '') {
-            Alert.alert(userName)
-        }
-    }, [userName])
 
-    const usernameStateCallback = (currentUsername) => {
-        setUsername(currentUsername)
+
+    }, [userCredentialState])
+
+    const userCredentialStateCallback = (currentUserStateCredentials) => {
+        setUserCredentialState(currentUserStateCredentials)
     }
 
     return (
@@ -31,10 +31,12 @@ const Login = ({navigation}) => {
             </View>
             <View style={styles.formSection}>
                 <LoginFormContainer nav={navigation}
-                                    dataPasser={usernameStateCallback}/>
+                                    dataPasser={userCredentialStateCallback}/>
             </View>
             <View style={styles.buttonSection}>
-                <LoginButtonSection nav={navigation}/>
+                <LoginButtonSection nav={navigation}
+                                    emailAddress={userCredentialState.email}
+                                    password={userCredentialState.password}/>
             </View>
         </View>
     );
@@ -56,8 +58,10 @@ const styles = StyleSheet.create({
 
     formSection: {
         flex: 2,
+        padding: 15,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
     },
 
     buttonSection: {

@@ -5,7 +5,7 @@ import {Avatar} from 'react-native-paper'
 const ProfilePictureSection = () => {
     return (
         <View style={styles.container}>
-                <Avatar.Image size={200} image={require('../../assets/avatar.png')} style={styles.avatar}/>
+                <Avatar.Image size={200} image={require('../../../../assets/avatar.png')} style={styles.avatar}/>
         </View>
     )
 }

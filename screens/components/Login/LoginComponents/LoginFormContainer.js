@@ -4,13 +4,14 @@ import {View, Alert, StyleSheet} from "react-native";
 
 
 const LoginFormContainer = (props) => {
-    const [currentUsername, setCurrentUsername] = useState('')
+    const [currentUserState, setCurrentUserState] = useState({
+        email: '',
+        password: ''
+    })
 
     useEffect(() => {
-        if (currentUsername !== ''){
-            props.dataPasser(currentUsername)
-        }
-    }, [currentUsername])
+        props.dataPasser(currentUserState)
+    }, [currentUserState])
 
     return (
         <View style={styles.formContainer}>
@@ -19,21 +20,30 @@ const LoginFormContainer = (props) => {
                 label="Email"
                 style={styles.infoInput}
                 selectionColor={'#A41846'}
-                value={currentUsername}
-                // onChangeTsext={text => setUsername(text)}
+                value={currentUserState.email}
                 onChangeText={text => {
-                    setCurrentUsername(text)
-                    props.dataPasser(currentUsername)
+                    setCurrentUserState(oldState => {
+                        return {
+                            ...oldState,
+                            email: text
+                        }
+                    })
                 }}
-
             />
 
             <TextInput
                 multiLine={false}
                 label="Password"
                 style={styles.infoInput}
-                // value={password}
-                // onChangeText={text => setPassword(text)}
+                value={currentUserState.password}
+                onChangeText={text => {
+                    setCurrentUserState(oldState => {
+                        return {
+                            ...oldState,
+                            password: text
+                        }
+                    })
+                }}
             />
 
             <Button color={'#7a57d1'}
@@ -50,12 +60,13 @@ const styles = StyleSheet.create({
 
     formContainer: {
         flex: 1,
+        width: '100%',
         alignItems: 'center',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
     },
 
     infoInput: {
-        width: 300,
+        width: '100%',
         height: 50,
     },
 

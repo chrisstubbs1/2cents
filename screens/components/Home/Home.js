@@ -4,8 +4,8 @@ import {
     StyleSheet,
     View,
 } from "react-native";
-import HomeRightHalf from "./components/HomeRightHalf";
-import HomeLeftHalf from "./components/HomeLeftHalf";
+import HomeRightHalf from "./HomeComponents/HomeRightHalf";
+import HomeLeftHalf from "./HomeComponents/HomeLeftHalf";
 
 const Home = () => {
 

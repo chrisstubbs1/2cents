@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text} from "react-native";
-import LogoHeader from "./components/LogoHeader";
+import LogoHeader from "../Login/LoginComponents/LogoHeader";
 import {Button, TextInput} from "react-native-paper";
 
 const Signup = () => {

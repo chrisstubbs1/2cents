@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native'
-import MainHeader from "./components/MainHeader";
+import MainHeader from "./components/Profile/ProfileComponents/MainHeader";
 
 const AnnouncementBoard = () => {
     return(

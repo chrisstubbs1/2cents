@@ -1,10 +1,10 @@
 import React from 'react'
 import {createDrawerNavigator} from '@react-navigation/drawer'
-import Profile from "../screens/Profile";
+import Profile from "../screens/components/Profile/Profile";
 import AnnouncementBoard from "../screens/AnnouncementBoard";
 import CustomDrawerContent from '../routes/CustomDrawerComponent'
 
-import Home from "../screens/Home";
+import Home from "../screens/components/Home/Home";
 
 const Drawer = createDrawerNavigator()
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import {View, StyleSheet, ScrollView} from 'react-native'
-import MainHeader from './components/MainHeader'
-import ProfilePictureSection from './components/ProfilePictureSection'
-import ProfileInfoSection from './components/ProfileInfoSection'
+import MainHeader from './ProfileComponents/MainHeader'
+import ProfilePictureSection from './ProfileComponents/ProfilePictureSection'
+import ProfileInfoSection from './ProfileComponents/ProfileInfoSection'
 
 const Profile = () => {
     return (

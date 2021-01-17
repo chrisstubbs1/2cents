@@ -1,10 +1,10 @@
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 import {Provider as PaperProvider} from 'react-native-paper';
-import Login from "./screens/Login";
+import Login from "./screens/components/Login/Login";
 import ForgotPassword from "./screens/ForgotPassword";
 import {NavigationContainer} from "@react-navigation/native";
-import Signup from "./screens/Signup";
+import Signup from "./screens/components/Signup/Signup";
 import HomeDrawer from "./routes/homeDrawer";
 
 const Stack = createStackNavigator();

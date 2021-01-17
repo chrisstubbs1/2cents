@@ -12,7 +12,7 @@ const HomeLeftHalf = () => {
     return (
         <View style={styles.leftHalf}>
             <View style={styles.drawerSection}>
-               
+
             </View>
 
             <View style={styles.contentSection}>
@@ -31,7 +31,6 @@ const HomeLeftHalf = () => {
                 <Button labelStyle={styles.buttonSize}>Swipe!</Button>
             </View>
         </View>
-
     )
 }
 

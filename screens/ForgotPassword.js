@@ -1,7 +1,7 @@
 import React from "react";
 import {View} from "react-native";
 import {StyleSheet} from "react-native";
-import LogoHeader from "./components/LogoHeader";
+import LogoHeader from "./components/Login/LoginComponents/LogoHeader";
 import {Button, Headline, Paragraph, TextInput} from 'react-native-paper'
 
 const ForgotPassword = () => {
