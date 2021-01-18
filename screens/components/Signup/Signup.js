@@ -1,9 +1,51 @@
-import React from 'react';
-import {View, StyleSheet, Text} from "react-native";
+import React, {useState} from 'react';
+import {View, StyleSheet, Text, Alert} from "react-native";
 import LogoHeader from "../Login/LoginComponents/LogoHeader";
 import {Button, TextInput} from "react-native-paper";
+import auth from '@react-native-firebase/auth';
+
 
 const Signup = () => {
+
+    const [signupState, setSignupState] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    })
+
+    const [passwordErrorText, setPasswordErrorText] = useState('')
+
+    const checkIfPasswordsAreEqual = (password1, password2) => {
+        return password1 === password2
+    }
+
+    const checkIfEmailIsValid = (emailToBeChecked) => {
+        return emailToBeChecked.includes('@')
+    }
+
+    const handleSignupPress = () => {
+        if (!checkIfPasswordsAreEqual(signupState.password, signupState.confirmPassword)){
+            setPasswordErrorText('Passwords do not match')
+            return
+        }
+
+        setPasswordErrorText('')
+
+        if (!checkIfEmailIsValid(signupState.email)){
+            Alert.alert('Not a valid email')
+            return
+        }
+
+        auth().createUserWithEmailAndPassword(signupState.email, signupState.password)
+            .then(() => Alert.alert('account successfully created'))
+            .catch(() => {
+                Alert.alert('Account could not be created.')
+            })
+
+    }
+
     return (
         <View style={styles.container}>
             <LogoHeader/>
@@ -14,6 +56,15 @@ const Signup = () => {
                         label="First Name"
                         style={styles.infoInput}
                         selectionColor={'#A41846'}
+                        value={signupState.firstName}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    firstName: text
+                                }
+                            })
+                        }}
                     />
 
                     <TextInput
@@ -21,6 +72,15 @@ const Signup = () => {
                         label="Last Name"
                         style={styles.infoInput}
                         selectionColor={'#A41846'}
+                        value={signupState.lastName}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    lastName: text
+                                }
+                            })
+                        }}
                     />
 
                     <TextInput
@@ -28,6 +88,15 @@ const Signup = () => {
                         label="Email"
                         style={styles.infoInput}
                         selectionColor={'#A41846'}
+                        value={signupState.email}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    email: text
+                                }
+                            })
+                        }}
                     />
 
                     <TextInput
@@ -35,6 +104,15 @@ const Signup = () => {
                         label="Password"
                         style={styles.infoInput}
                         selectionColor={'#A41846'}
+                        value={signupState.password}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    password: text
+                                }
+                            })
+                        }}
                     />
 
                     <TextInput
@@ -42,8 +120,19 @@ const Signup = () => {
                         label="Confirm Password"
                         style={styles.infoInput}
                         selectionColor={'#A41846'}
+                        value={signupState.confirmPassword}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    confirmPassword: text
+                                }
+                            })
+                        }}
                     />
                 </View>
+
+                <Text>{passwordErrorText}</Text>
 
             </View>
             <View style={styles.privacyTxtContainer}>
@@ -52,7 +141,9 @@ const Signup = () => {
             </View>
 
             <View style={styles.lastSection}>
-                <Button mode={'contained'} color={'#7a57d1'} style={styles.signupBtn}>Sign Up!</Button>
+                <Button mode={'contained'} color={'#7a57d1'}
+                        style={styles.signupBtn}
+                        onPress={handleSignupPress}>Sign Up!</Button>
             </View>
         </View>
     )

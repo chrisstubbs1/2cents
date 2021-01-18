@@ -16,6 +16,10 @@ const LoginButtonSection = ({nav, emailAddress, password}) => {
         }
 
         auth().signInWithEmailAndPassword(emailAddress, password)
+            .then(() => {
+                Alert.alert(`Successfully signed in as ${emailAddress}`)
+                nav.navigate('Home')
+            })
             .catch(() => {
                 Alert.alert("Login failed. Try again")
             })
