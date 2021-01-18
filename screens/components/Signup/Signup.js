@@ -26,14 +26,14 @@ const Signup = () => {
     }
 
     const handleSignupPress = () => {
-        if (!checkIfPasswordsAreEqual(signupState.password, signupState.confirmPassword)){
+        if (!checkIfPasswordsAreEqual(signupState.password, signupState.confirmPassword)) {
             setPasswordErrorText('Passwords do not match')
             return
         }
 
         setPasswordErrorText('')
 
-        if (!checkIfEmailIsValid(signupState.email)){
+        if (!checkIfEmailIsValid(signupState.email)) {
             Alert.alert('Not a valid email')
             return
         }
@@ -132,7 +132,7 @@ const Signup = () => {
                     />
                 </View>
 
-                <Text>{passwordErrorText}</Text>
+                <Text style={styles.invalidPasswordTxt}>{passwordErrorText}</Text>
 
             </View>
             <View style={styles.privacyTxtContainer}>
@@ -155,6 +155,12 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#fff",
 
+    },
+
+    invalidPasswordTxt: {
+        fontSize: 15,
+        color: 'green',
+        padding: 3
     },
 
     infoInput: {
