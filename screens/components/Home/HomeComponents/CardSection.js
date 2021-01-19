@@ -1,20 +1,15 @@
 import React from 'react'
-import {View} from "react-native";
 import {Card, Paragraph, Title} from "react-native-paper";
 
-const CardSection = () => {
+const CardSection = ({imageSource, title, description}) => {
     return(
-        <View style={styles.contentSection}>
-            <View style={styles.cardContainer}>
-                <Card>
-                    <Card.Cover source={{uri: 'https://picsum.photos/700'}}/>
-                    <Card.Content>
-                        <Title>Choice 2</Title>
-                        <Paragraph>A short description</Paragraph>
-                    </Card.Content>
-                </Card>
-            </View>
-        </View>
+        <Card>
+            <Card.Cover source={{uri: imageSource}}/>
+            <Card.Content>
+                <Title>{title}</Title>
+                <Paragraph>{description}</Paragraph>
+            </Card.Content>
+        </Card>
     )
 }
 

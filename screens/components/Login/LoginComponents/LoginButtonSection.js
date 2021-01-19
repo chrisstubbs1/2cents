@@ -10,14 +10,13 @@ const LoginButtonSection = ({nav, emailAddress, password}) => {
     }
 
     const handleLogin = () => {
-        if (checkEmailOrPasswordIsEmpty(emailAddress, password)){
+        if (checkEmailOrPasswordIsEmpty(emailAddress, password)) {
             Alert.alert('Email or Password cannot be empty')
             return;
         }
 
         auth().signInWithEmailAndPassword(emailAddress, password)
             .then(() => {
-                Alert.alert(`Successfully signed in as ${emailAddress}`)
                 nav.navigate('Home')
             })
             .catch(() => {
@@ -25,7 +24,7 @@ const LoginButtonSection = ({nav, emailAddress, password}) => {
             })
     }
 
-    return(
+    return (
         <View>
             <Button mode={'contained'} contentStyle={styles.loginBtn}
                     onPress={handleLogin}>
@@ -37,7 +36,6 @@ const LoginButtonSection = ({nav, emailAddress, password}) => {
             </Button>
         </View>
     )
-
 }
 
 

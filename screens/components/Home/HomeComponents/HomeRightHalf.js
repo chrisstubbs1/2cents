@@ -1,37 +1,21 @@
 import React from 'react'
 import {StyleSheet, View} from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
-import Icon from "react-native-vector-icons/Entypo";
-import {Button, Card, Paragraph, Title} from "react-native-paper";
+import CategoriesSecion from "./CategoriesSection";
+import CardSection from "./CardSection";
+import {Button, } from "react-native-paper";
 
-const HomeRightHalf = () => {
+const HomeRightHalf = ({choice}) => {
     return(
         <View style={styles.rightHalf}>
             <View style={styles.categoriesSection}>
-                <DropDownPicker items={[
-                    {
-                        label: 'Restaurants',
-                        value: 'restaurants',
-                        icon: () => <Icon name="flag" size={18} color="#7a57d1"/>,
-                        hidden: true
-                    },
-                    {label: 'Pop Culture', value: 'pop', icon: () => <Icon name="music" size={18} color="#7a57d1"/>},
-                    {label: 'Food & Drink', value: 'food', icon: () => <Icon name="cake" size={18} color="#7a57d1"/>},
-                ]}
-                                containerStyle={{height: 40}}
-                                placeholder={'Categories'}
-                />
+                <CategoriesSecion/>
             </View>
 
             <View style={styles.contentSection}>
                 <View style={styles.cardContainer}>
-                    <Card>
-                        <Card.Cover source={{uri: 'https://picsum.photos/700'}}/>
-                        <Card.Content>
-                            <Title>Choice 2</Title>
-                            <Paragraph>A short description</Paragraph>
-                        </Card.Content>
-                    </Card>
+                    <CardSection imageSource={choice.imageSource}
+                                 title={choice.title}
+                                 description={choice.description}/>
                 </View>
             </View>
 
@@ -45,7 +29,6 @@ const HomeRightHalf = () => {
 const styles = StyleSheet.create({
     swipeButtonSection: {
         flex: 1,
-
     },
 
     buttonSize: {

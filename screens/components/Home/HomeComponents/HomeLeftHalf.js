@@ -1,13 +1,9 @@
 import {StyleSheet, View} from "react-native";
-import {Button, Card, Divider, Menu, Paragraph, Title} from "react-native-paper";
+import {Button} from "react-native-paper";
 import React from "react";
+import CardSection from "./CardSection";
 
-const HomeLeftHalf = () => {
-    const [visible, setVisible] = React.useState(false);
-
-    const openMenu = () => setVisible(true);
-
-    const closeMenu = () => setVisible(false);
+const HomeLeftHalf = ({choice}) => {
 
     return (
         <View style={styles.leftHalf}>
@@ -17,13 +13,9 @@ const HomeLeftHalf = () => {
 
             <View style={styles.contentSection}>
                 <View style={styles.cardContainer}>
-                    <Card>
-                        <Card.Cover source={{uri: 'https://picsum.photos/700'}}/>
-                        <Card.Content>
-                            <Title>Choice 1</Title>
-                            <Paragraph>A short description</Paragraph>
-                        </Card.Content>
-                    </Card>
+                    <CardSection imageSource={choice.imageSource}
+                                 title={choice.title}
+                                 description={choice.description}/>
                 </View>
             </View>
 
@@ -37,7 +29,6 @@ const HomeLeftHalf = () => {
 const styles = StyleSheet.create({
     swipeButtonSection: {
         flex: 1,
-
     },
 
     buttonSize: {
@@ -49,12 +40,17 @@ const styles = StyleSheet.create({
         flex: 5,
         alignItems: 'center',
         justifyContent: 'center'
-    }, cardContainer: {
+    },
+
+    cardContainer: {
         width: '100%',
-    }, drawerSection: {
+    },
+
+    drawerSection: {
         flex: 1,
         alignItems: 'flex-start'
     },
+
     leftHalf: {
         height: "100%",
         width: "50%",

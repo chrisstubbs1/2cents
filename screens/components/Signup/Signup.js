@@ -4,13 +4,13 @@ import LogoHeader from "../Login/LoginComponents/LogoHeader";
 import {Button, TextInput} from "react-native-paper";
 import auth from '@react-native-firebase/auth';
 
-
 const Signup = () => {
 
     const [signupState, setSignupState] = useState({
         firstName: '',
         lastName: '',
         email: '',
+        username: '',
         password: '',
         confirmPassword: ''
     })
@@ -43,7 +43,6 @@ const Signup = () => {
             .catch(() => {
                 Alert.alert('Account could not be created.')
             })
-
     }
 
     return (
@@ -94,6 +93,22 @@ const Signup = () => {
                                 return {
                                     ...oldState,
                                     email: text
+                                }
+                            })
+                        }}
+                    />
+
+                    <TextInput
+                        multiLine={false}
+                        label="Last Name"
+                        style={styles.infoInput}
+                        selectionColor={'#A41846'}
+                        value={signupState.username}
+                        onChangeText={text => {
+                            setSignupState(oldState => {
+                                return {
+                                    ...oldState,
+                                    username: text
                                 }
                             })
                         }}

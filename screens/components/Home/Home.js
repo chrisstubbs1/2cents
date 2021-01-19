@@ -1,18 +1,15 @@
-import React from "react";
-
-import {
-    StyleSheet,
-    View,
-} from "react-native";
+import React, {useEffect} from "react";
+import {StyleSheet, View, Alert} from "react-native";
 import HomeRightHalf from "./HomeComponents/HomeRightHalf";
 import HomeLeftHalf from "./HomeComponents/HomeLeftHalf";
+import {choices} from '../../../models/votingmodels/choices'
 
 const Home = () => {
 
     return (
         <View style={styles.container}>
-            <HomeLeftHalf/>
-            <HomeRightHalf/>
+            <HomeLeftHalf choice={choices.comparison1[0]}/>
+            <HomeRightHalf choice={choices.comparison1[1]}/>
         </View>
     );
 };
@@ -61,7 +58,6 @@ const styles = StyleSheet.create({
     categoriesSection: {
         flex: 1,
     }
-
 });
 
 export default Home;
